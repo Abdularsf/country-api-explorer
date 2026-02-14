@@ -9,7 +9,7 @@ export const Country = () => {
     useEffect(() => {
         startTransition(async () => {
             const res = await getCountryData();
-            setCountries(res);
+            setCountries(res.data);
         })
     }, [])
 
@@ -19,13 +19,13 @@ export const Country = () => {
 
     return (
         <section className="country-section">
-            <div className="grid grid-four-cols">
+            <ul className="grid grid-four-cols">
                 {
-                    setCountries.map((curCountry) => {
-                        return <CountryCard country = {curCountry}/>
+                    contries.map((curCountry) => {
+                        // return <CountryCard country = {curCountry}/>
                     })
                 }
-            </div>
+            </ul>
         </section>
     )
 }
