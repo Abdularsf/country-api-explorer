@@ -1,6 +1,7 @@
 import { useEffect, useState, useTransition } from "react"
 import { getCountryData } from "../api/postApi"
 import { Loader } from "../components/UI/Loader"
+import { CountryCard } from "../components/Layout/CountryCard"
 
 export const Country = () => {
     const [isPending, startTransition] = useTransition()
@@ -21,8 +22,8 @@ export const Country = () => {
         <section className="country-section">
             <ul className="grid grid-four-cols">
                 {
-                    contries.map((curCountry) => {
-                        // return <CountryCard country = {curCountry}/>
+                    contries.map((curCountry,index) => {
+                        return <CountryCard country = {curCountry} key = {index}/>
                     })
                 }
             </ul>
