@@ -146,6 +146,7 @@ nav ul {
 
   .menu-mobile {
     position: absolute;
+    z-index: 1;
     top: 10rem;
     left: 0;
     background-color: #0d1212;
